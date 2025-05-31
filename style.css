@@ -1,0 +1,508 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333; /* Default text color */
+    background-color: #fff; /* Default page background */
+}
+
+/* General Link Styling (can be overridden by more specific selectors) */
+a {
+    color: #007bff; /* Standard link color */
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+a:hover {
+    color: #0056b3; /* Darker on hover */
+    text-decoration: underline;
+}
+
+/* General heading consistency */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.75em;
+    font-weight: 600;
+    line-height: 1.3; /* Consistent line height for headings */
+}
+
+/* Default styling for sections - can be overridden */
+section {
+    padding: 40px 20px;
+    width: 100%; /* Ensure sections take full available width */
+}
+
+main {
+    display: block; /* Ensure main is treated as a block element */
+}
+
+/* Styles for Labwear Studios Clone */
+
+/* Basic Header Styling */
+header {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Max width for nav content */
+    margin: 0 auto; /* Center nav content */
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px; /* Add some padding to nav links */
+}
+nav ul li a:hover {
+    color: #0056b3; /* Consistent hover color */
+    text-decoration: none; /* No underline for nav links on hover */
+}
+
+
+/* Basic styling for hiding submenus */
+nav ul ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 0;
+    min-width: 200px; /* Increased min-width for dropdowns */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul ul li {
+    margin: 0;
+    width: 100%;
+}
+
+nav ul ul li a {
+    padding: 10px 15px; /* Padding for dropdown links */
+    display: block;
+    color: #333;
+    white-space: nowrap; /* Prevent wrapping in dropdown */
+}
+
+nav ul ul li a:hover {
+    background-color: #f0f0f0; /* Hover effect for dropdown items */
+}
+
+/* Show submenu on hover/focus of parent li - basic accessibility */
+nav ul li:hover > ul,
+nav ul li:focus-within > ul {
+    display: block;
+}
+
+
+/* "What we do" Section Styling */
+#what-we-do {
+    text-align: center;
+    /* padding is from global section style */
+}
+
+#what-we-do h1 { /* Already has margin-bottom from global h1 */
+    font-size: 2.2em; /* Slightly larger for section titles */
+}
+
+#what-we-do > p {
+    margin-bottom: 40px; /* Increased space after intro paragraph */
+    font-size: 1.1em;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sub-sections-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: left;
+    max-width: 1200px; /* Max width for this container */
+    margin: 0 auto; /* Center container */
+}
+
+.sub-section {
+    border: 1px solid #eee;
+    padding: 25px; /* Increased padding */
+    flex-basis: calc(33.333% - 20px); /* Adjust for gap */
+    min-width: 280px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Softer shadow */
+    background-color: #fff;
+    border-radius: 5px; /* Added border radius */
+}
+
+.sub-section h2 {
+    font-size: 1.6em; /* Consistent heading size */
+    /* margin-bottom from global h2 */
+    color: #333;
+}
+
+.sub-section p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* "Manufacturing as a Service" Section Styling */
+#manufacturing-as-a-service {
+    background-color: #f9f9f9;
+    text-align: center;
+    /* padding from global section style */
+}
+
+#manufacturing-as-a-service h1 {
+    font-size: 2.2em;
+    /* margin-bottom from global h1 */
+    color: #333;
+}
+
+#manufacturing-as-a-service h2 {
+    font-size: 1.6em;
+    margin-bottom: 25px; /* Specific margin */
+    color: #555;
+}
+
+#manufacturing-as-a-service p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff; /* Primary button color */
+    color: #fff;
+    padding: 12px 25px; /* Adjusted padding */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker primary */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* "How to get started" Section Styling */
+#how-to-get-started {
+    text-align: center;
+    background-color: #fff;
+    /* padding from global section style */
+}
+
+#how-to-get-started h1 {
+    font-size: 2.2em;
+    margin-bottom: 40px; /* More space */
+    color: #333;
+}
+
+#how-to-get-started ol {
+    list-style: none;
+    counter-reset: step-counter;
+    padding-left: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#how-to-get-started li {
+    counter-increment: step-counter;
+    margin-bottom: 30px; /* Increased space */
+    padding: 25px;
+    background-color: #f9f9f9;
+    position: relative;
+    padding-left: 90px; /* More space for counter */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+#how-to-get-started li::before {
+    content: counter(step-counter);
+    font-weight: bold;
+    font-size: 1.8em;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 20px; /* Adjusted padding */
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 1;
+    position: absolute;
+    left: 25px; /* Adjusted position */
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+#how-to-get-started li strong {
+    display: block;
+    font-size: 1.5em; /* Adjusted size */
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#how-to-get-started li p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* "LabReport" Section Styling */
+#lab-report {
+    text-align: center;
+    background-color: #f9f9f9;
+    /* padding from global section style */
+}
+
+#lab-report h1 {
+    font-size: 2.2em;
+    /* margin-bottom from global h1 */
+    color: #333;
+}
+
+#lab-report h2 {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.case-studies-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.case-study-item {
+    border: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    flex-basis: calc(33.333% - 25px);
+    min-width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    background-color: #fff;
+    text-align: left;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.case-study-image-placeholder {
+    height: 220px;
+    background-color: #d8d8d8;
+    width: 100%; /* Ensure placeholder takes full width of item */
+}
+
+.case-study-item h3 {
+    font-size: 1.3em; /* Adjusted title size */
+    margin: 20px 20px 10px 20px;
+    color: #333;
+    flex-grow: 1;
+}
+
+.case-study-item .read-more-link { /* Specificity for read-more within case-study */
+    display: inline-block;
+    margin: 10px 20px 0 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+.case-study-item .read-more-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* "Advanced Product Development" Section Styling */
+#advanced-product-development {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#advanced-product-development h1 {
+    font-size: 2.2em;
+    /* margin-bottom from global h1 */
+    color: #333;
+}
+
+#advanced-product-development > p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    background-color: #6c757d;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 10px;
+    border: 1px solid #6c757d;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: #fff;
+    text-decoration: none;
+}
+
+#advanced-product-development .additional-info {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 45px;
+    padding-top: 35px;
+    border-top: 1px solid #e0e0e0;
+    max-width: 1200px; /* Max width for this container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#advanced-product-development .info-block {
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    flex-basis: calc(45% - 30px);
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#advanced-product-development .info-block h2 {
+    font-size: 1.5em; /* Adjusted size */
+    color: #333;
+    /* margin-bottom from global h2 */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    padding: 50px 20px 20px;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #34495e;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+    padding: 0 15px; /* Reduced padding as gap handles spacing */
+}
+
+.footer-column h5 {
+    font-size: 1.1em; /* Adjusted size */
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+    color: #bdc3c7;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover,
+.footer-column p a:hover {
+    color: #fff;
+    text-decoration: underline; /* Underline on hover for footer links */
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.social-links li {
+    /* display: inline-block; margin-right: 10px; */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9em;
+    color: #7f8c8d;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
