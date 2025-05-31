@@ -1,0 +1,30 @@
+import React from 'react';
+
+const WhatWeDoSection = () => {
+  return (
+    <section id="what-we-do">
+      <h1>What we do</h1>
+      <p>We’re democratizing fashion manufacturing - providing ready-to-order blanks, advanced product development, and on-demand manufacturing at the touch of a button.</p>
+      <div className="sub-sections-container">
+        <article className="sub-section">
+          {/* Image placeholder - using div with class for potential CSS styling */}
+          <div className="case-study-image-placeholder"></div> {/* Re-using class from LabReport for consistency if applicable, or use a specific one */}
+          <h2>Wholesale Blanks</h2>
+          <p>High-quality blanks. No MOQs. Shipped within 3 days.</p>
+        </article>
+        <article className="sub-section">
+          <div className="case-study-image-placeholder"></div>
+          <h2>Manufacturing-as-a-Service</h2>
+          <p>A digital manufacturing platform to access our integrated supply chains and produce fully custom garments.</p>
+        </article>
+        <article className="sub-section">
+          <div className="case-study-image-placeholder"></div>
+          <h2>Development Services</h2>
+          <p>Built around full product creation from client brief to 3d samples, prototypes, and fabric development.</p>
+        </article>
+      </div>
+    </section>
+  );
+};
+
+export default WhatWeDoSection;

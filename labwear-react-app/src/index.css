@@ -1,0 +1,305 @@
+/* Shadcn UI CSS Variables (Slate Theme - Default) */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 215 20.2% 65.1%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Google Font Imports (linked in public/index.html by a separate step) --- */
+/* Fonts: Montserrat (headings), Open Sans (body) */
+
+/* --- Global Style Overrides & Enhancements --- */
+/* Universal box-sizing is often included in Tailwind's base or preflight */
+/* Ensure it's not duplicated if Tailwind adds it. If not, this is fine: */
+*, *::before, *::after {
+  box-sizing: border-box;
+  /* margin: 0; and padding: 0; are typically handled by Tailwind's preflight (included in @tailwind base) */
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  color: hsl(var(--foreground)); /* Using Shadcn variable */
+  background-color: hsl(var(--background)); /* Using Shadcn variable */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: #2c3e50; /* Retaining specific heading color, or could use var(--foreground) or a new var */
+  margin-top: 1em;
+  margin-bottom: 0.6em;
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.8em; letter-spacing: -0.5px; margin-bottom: 0.5em; }
+h2 { font-size: 2em; margin-bottom: 0.5em; }
+h3 { font-size: 1.5em; margin-bottom: 0.4em; }
+h4 { font-size: 1.2em; margin-bottom: 0.4em; }
+h5 { font-size: 1.1em; font-weight: 600; margin-bottom: 0.4em; }
+h6 { font-size: 1em; font-weight: 600; margin-bottom: 0.4em; }
+
+/* Links can use primary color from Shadcn */
+a { color: hsl(var(--primary)); text-decoration: none; transition: color 0.2s ease; }
+a:hover { opacity: 0.8; text-decoration: none; } /* Using opacity for hover on primary color */
+
+/* Custom .cta-button styles (if still needed alongside Shadcn buttons) */
+/* These might be replaced by Tailwind utilities + Shadcn Button variants over time */
+.cta-button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: hsl(var(--primary)); /* Shadcn primary */
+  color: hsl(var(--primary-foreground)) !important;
+  padding: 12px 28px; border-radius: var(--radius); text-transform: uppercase; font-weight: 600;
+  letter-spacing: 0.8px; transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block; border: none; text-align: center;
+}
+.cta-button:hover {
+  background-color: hsl(var(--primary)); /* Adjust hover if primary is already dark, e.g. opacity or a darker shade var */
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); text-decoration: none !important;
+}
+
+.cta-button-secondary {
+  font-family: 'Montserrat', sans-serif;
+  background-color: hsl(var(--secondary)); /* Shadcn secondary */
+  color: hsl(var(--secondary-foreground)) !important;
+  border: 1px solid hsl(var(--border));
+  padding: 11px 22px; border-radius: var(--radius); font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block; text-align: center;
+}
+.cta-button-secondary:hover {
+  background-color: hsl(var(--secondary));
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-decoration: none !important;
+}
+
+section { padding: 50px 20px; width: 100%; }
+main { display: block; }
+
+header {
+  background-color: hsl(var(--card)); /* Using Shadcn card background */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 15px 20px;
+  border-bottom: 1px solid hsl(var(--border));
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav .logo {
+  font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.7em; color: hsl(var(--foreground));
+}
+nav ul { list-style: none; display: flex; margin:0; padding:0; }
+nav ul li { margin-left: 20px; position: relative; }
+nav ul li a {
+  font-family: 'Montserrat', sans-serif; color: hsl(var(--foreground)); font-weight: 500;
+  padding: 8px 12px; position: relative; border-radius: var(--radius);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+nav ul li a:hover { color: hsl(var(--primary)); background-color: hsl(var(--accent)); text-decoration: none; }
+nav ul li a::after {
+  content: ''; position: absolute; width: 0; height: 2px; bottom: -4px;
+  left: 50%; transform: translateX(-50%); background-color: hsl(var(--primary)); transition: width 0.25s ease;
+}
+nav ul li a:hover::after { width: 60%; }
+
+nav ul .sub-menu {
+  display: none; position: absolute; left: 0; top: 100%;
+  background-color: hsl(var(--popover)); /* Shadcn popover background */
+  border: 1px solid hsl(var(--border));
+  padding: 0;
+  min-width: 200px; z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 0 0 var(--radius) var(--radius);
+  border-top: 2px solid hsl(var(--primary));
+}
+nav ul li:hover > .sub-menu,
+nav ul li:focus-within > .sub-menu {
+    display: block;
+}
+nav ul .sub-menu li { margin: 0; width: 100%; }
+nav ul .sub-menu li a {
+    font-family: 'Open Sans', sans-serif; font-weight: 400;
+    padding: 10px 15px; display: block; color: hsl(var(--popover-foreground)); white-space: nowrap;
+}
+nav ul .sub-menu li a:hover { background-color: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
+
+/* Section specific styles (minimal changes, mostly inheriting new globals) */
+#what-we-do { text-align: center; }
+#what-we-do > p {
+    margin-bottom: 40px; font-size: 1.1em; color: #555; /* Could use var(--muted-foreground) */
+    max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.sub-sections-container {
+    display: flex; justify-content: space-around; flex-wrap: wrap;
+    gap: 20px; text-align: left; max-width: 1200px; margin: 0 auto;
+}
+.sub-section {
+    border: 1px solid hsl(var(--border)); padding: 25px; flex-basis: calc(33.333% - 20px);
+    min-width: 280px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: hsl(var(--card)); border-radius: var(--radius);
+}
+.sub-section h2 { font-size: 1.6em; }
+.sub-section p { font-size: 1em; color: #666; line-height: 1.6; margin:0; }
+
+#manufacturing-as-a-service { background-color: hsl(var(--muted)); text-align: center; } /* Using muted */
+#manufacturing-as-a-service h1 { font-size: 2.2em; }
+#manufacturing-as-a-service h2 { font-size: 1.6em; margin-bottom: 25px; color: #555; }
+#manufacturing-as-a-service p {
+    font-size: 1.1em; color: #666; line-height: 1.6;
+    max-width: 800px; margin: 0 auto 30px auto;
+}
+
+#how-to-get-started { text-align: center; background-color: hsl(var(--background)); }
+#how-to-get-started h1 { margin-bottom: 40px; font-size: 2.2em; }
+#how-to-get-started ol {
+    list-style: none; counter-reset: step-counter; padding-left: 0;
+    max-width: 900px; margin: 0 auto; text-align: left;
+}
+#how-to-get-started li {
+    counter-increment: step-counter; margin-bottom: 30px; padding: 25px;
+    background-color: hsl(var(--muted)); position: relative; padding-left: 90px;
+    border: 1px solid hsl(var(--border)); border-radius: var(--radius);
+}
+#how-to-get-started li::before {
+    content: counter(step-counter); font-weight: bold; font-size: 1.8em;
+    color: hsl(var(--primary-foreground)); background-color: hsl(var(--primary)); padding: 12px 20px;
+    border-radius: 50%; display: inline-block; line-height: 1;
+    position: absolute; left: 25px; top: 50%; transform: translateY(-50%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+#how-to-get-started li strong { display: block; font-size: 1.5em; margin-bottom: 10px; color: hsl(var(--foreground)); }
+#how-to-get-started li p { font-size: 1em; color: #555; line-height: 1.7; margin:0; }
+
+#lab-report { text-align: center; background-color: hsl(var(--muted)); }
+#lab-report h1 { font-size: 2.2em; }
+#lab-report h2 { font-size: 1.6em; margin-bottom: 40px; color: #555; }
+.case-studies-container {
+    display: flex; justify-content: space-around; flex-wrap: wrap;
+    gap: 25px; max-width: 1200px; margin: 0 auto;
+}
+.case-study-item {
+    border: 1px solid hsl(var(--border)); padding-bottom: 20px; flex-basis: calc(33.333% - 25px);
+    min-width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    background-color: hsl(var(--card)); text-align: left; border-radius: var(--radius);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.case-study-item:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.12); }
+.case-study-item h3 { font-size: 1.3em; margin: 20px 20px 10px 20px; flex-grow: 1; }
+.case-study-item .read-more-link {
+    display: inline-block; margin: 10px 20px 0 20px;
+    font-weight: bold; padding: 8px 0;
+}
+
+#advanced-product-development { padding: 50px 20px; background-color: hsl(var(--background)); text-align: center; }
+#advanced-product-development h1 { font-size: 2.2em; }
+#advanced-product-development > p {
+    font-size: 1.1em; color: #555; line-height: 1.7;
+    max-width: 800px; margin: 0 auto 35px auto;
+}
+#advanced-product-development .additional-info {
+    display: flex; justify-content: space-evenly; flex-wrap: wrap;
+    gap: 30px; margin-top: 45px; padding-top: 35px;
+    border-top: 1px solid hsl(var(--border)); max-width: 1200px; margin-left: auto; margin-right: auto;
+}
+#advanced-product-development .info-block {
+    padding: 25px; background-color: hsl(var(--muted)); border-radius: var(--radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07); flex-basis: calc(45% - 30px);
+    min-width: 280px; display: flex; flex-direction: column; align-items: center;
+}
+#advanced-product-development .info-block h2 { font-size: 1.5em; }
+
+footer {
+  background-color: #2c3e50; /* Original dark color, or use Shadcn var if a theme is made */
+  color: #abb8c3;
+  padding: 60px 20px 40px;
+  width: 100%;
+}
+.footer-container {
+    display: flex; justify-content: space-between; flex-wrap: wrap;
+    gap: 30px; margin-bottom: 40px; padding-bottom: 40px;
+    border-bottom: 1px solid #34495e; /* Darker border for dark bg */
+    max-width: 1200px;
+    margin-left: auto; margin-right: auto;
+}
+.footer-column { flex: 1; min-width: 220px; padding: 0 15px; }
+.footer-column h5 {
+  font-family: 'Montserrat', sans-serif; color: #ffffff; margin-bottom: 20px; font-size: 1.2em;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.footer-column ul { list-style: none; padding:0; margin:0; }
+.footer-column ul li { margin-bottom: 12px; }
+.footer-column ul li a, .footer-column p a { color: #abb8c3; transition: color 0.2s ease; }
+.footer-column ul li a:hover, .footer-column p a:hover { color: #ffffff; text-decoration: underline; }
+.footer-column p { font-size: 0.9em; line-height: 1.6; margin:0 0 10px 0;}
+
+.footer-bottom { text-align: center; font-size: 0.9em; color: #7f8c8d; padding-top: 20px; }
+.footer-bottom p { margin: 0; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+section img {
+    border-radius: var(--radius); /* Use Shadcn radius */
+}
+.case-study-image-placeholder {
+    height: 220px;
+    background-color: hsl(var(--muted)); /* Use Shadcn muted for placeholder bg */
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: var(--radius);
+}
